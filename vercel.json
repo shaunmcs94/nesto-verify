@@ -3,22 +3,5 @@
   "builds": [
     { "src": "api/send-code.js", "use": "@vercel/node" },
     { "src": "api/check-code.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "methods": ["OPTIONS"],
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type"
-      },
-      "status": 200,
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    }
   ]
 }
